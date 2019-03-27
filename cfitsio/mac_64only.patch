@@ -1,0 +1,16 @@
+Building universally doesn't work on Travis, because dependencies are built 64-bit only.
+
+--- a/configure
++++ b/configure
+@@ -4497,7 +4497,7 @@ case $host in
+                 if test "x$APPLEXCODE" = xyes; then
+                 # Apple XCode LLVM:
+                   # Flags for building Universal binaries:
+-                  C_UNIV_SWITCH="-arch i386 -arch x86_64"
++                  C_UNIV_SWITCH="-arch x86_64"  # XXX don't actually build universal!
+                   CFLAGS="$CFLAGS $C_UNIV_SWITCH"
+                   # Set LDFLAGS used by utilities:
+                   LDFLAGS_BIN="$LDFLAGS_BIN -rpath \${CFITSIO_LIB}"
+-- 
+2.15.0
+

@@ -1,0 +1,13 @@
+The author of configure.in made quite a strange strange decision here ...
+
+--- configure.orig	2017-01-03 00:06:19.377476176 -0500
++++ configure	2017-01-03 00:06:43.074590422 -0500
+@@ -4165,7 +4165,7 @@
+ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+-LDFLAGS="$CFLAGS"
++#LDFLAGS="$CFLAGS"
+ LDFLAGS_BIN="$LDFLAGS"
+ 
+ if test "x$FC" = "xnone" ; then

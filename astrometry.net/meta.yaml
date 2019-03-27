@@ -1,0 +1,43 @@
+{% set version = "0.77" %}
+
+package:
+    name: astrometry.net
+    version: {{ version }}
+
+source:
+    fn: astrometry-{{ version }}.zip
+    url: https://github.com/dstndstn/astrometry.net/archive/{{ version }}.zip
+
+build:
+    number: 1
+    skip: True # [osx]
+    skip: True # [win]
+
+requirements:
+    build:
+        - zlib
+        - jpeg
+        - netpbm
+        - libpng
+        - cfitsio
+        - astropy
+        - numpy
+        - bzip2
+        - swig
+        - cairo
+        - {{ compiler('c') }}
+        - git
+    run:
+        - zlib
+        - jpeg
+        - netpbm
+        - libpng
+        - cfitsio
+        - astropy
+        - numpy
+        - bzip2
+        - cairo
+
+about:
+    home: http://astrometry.net/
+    license: BSD-like
