@@ -23,10 +23,11 @@ requirements:
         - astropy
         - numpy
         - bzip2
-        - swig
         - cairo
+        - swig
         - {{ compiler('c') }}
         - git
+        - make
     run:
         - zlib
         - jpeg
