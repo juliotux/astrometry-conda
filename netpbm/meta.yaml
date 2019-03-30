@@ -1,5 +1,6 @@
 {% set name = "netpbm" %}
 {% set version = "10.73.26" %}
+{% set reversion = "r3580" %}
 
 package:
   name: {{ name }}
@@ -7,7 +8,7 @@ package:
 
 source:
   svn_url: http://svn.code.sf.net/p/netpbm/code/stable
-  svn_rev: r3580
+  svn_rev: {{ revision }}
   svn_ignore_externals: True
 
 build:
@@ -21,6 +22,7 @@ requirements:
     - flex
     - gettext
     - svn
+    - make
 
   host:
     - perl
@@ -29,7 +31,6 @@ requirements:
     - zlib
     - libpng
     - libxml2
-
   run:
     - perl
     - jpeg
